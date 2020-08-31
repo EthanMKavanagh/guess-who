@@ -15,7 +15,8 @@
 */
 
 //global variables
-let playerNumber = randomNumber(1, people.length);
+let playerNumber = randomNumber(0, people.length);
+let personName = people[playerNumber].name;
 
 console.log('js');
 $(document).ready(onReady);
@@ -23,7 +24,7 @@ function onReady() {
     console.log('Here are all the available people:', people);
     getPics();
     $(document).on('click', '.person', clickPerson);
-    alert(playerNumber);
+    $('#personToClickOn').append(`${personName}`);
 } // end onReady
 
 function getPics() {
