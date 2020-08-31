@@ -9,9 +9,9 @@
     [] if they pick right
         [] success message
         [] generate another number/name
-    [] if they're wrong
-        [] error message
-        [] try again
+    [x] if they're wrong
+        [x] error message
+        [x] try again
 */
 
 //global variables
@@ -28,7 +28,7 @@ function onReady() {
 } // end onReady
 
 function getPics() {
-    let personNumber = 0;
+    let personNumber = -1;
     for (let i = 0; i < people.length; i++) {
         personNumber++
         $('#peopleDiv').append(`
