@@ -3,7 +3,7 @@
     [x] in onReady, make function to append divs for each person with their github image
     [] create alert to tell player the name of the person they are looking for
         [x] assign each person's div a number
-        [] make each person's picture/div a button
+        [x] make each person's picture/div a button
         [] .alert();
         [] generate number between
     [] if they pick right
@@ -13,12 +13,19 @@
         [] error message
         [] try again
 */
+
+//global variables
+let playerNumber = 1;
+//randomNumber(1, people.length);
+
 console.log('js');
 $(document).ready(onReady);
 function onReady() {
+    randomNumber();
     console.log('Here are all the available people:', people);
     getPics();
-    $(document).on('click', '.person', clickPerson)
+    $(document).on('click', '.person', clickPerson);
+
 } // end onReady
 
 function getPics() {
@@ -34,5 +41,16 @@ function getPics() {
     } // end if
 } // end getPics
 
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (1 + max - min) + min);
+}
+
 function clickPerson() {
+    if (playerNumber === $(this).data('person-number')) {
+        console.log('click works');
+        alert('You got it right!');
+    } // end if
+    if (playerNumber != $(this).data('person-number')) {
+        alert('Oops, try again!');
+    } // end else
 } // end clickPerson
