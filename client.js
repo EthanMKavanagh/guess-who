@@ -1,10 +1,11 @@
 
 /*TODO:
-    [] in onReady, make function to append divs for each person with their github image
+    [x] in onReady, make function to append divs for each person with their github image
     [] create alert to tell player the name of the person they are looking for
-        [] assign each person's div a number 1-4
+        [x] assign each person's div a number
+        [] make each person's picture/div a button
         [] .alert();
-        [] generate number between 1-4
+        [] generate number between
     [] if they pick right
         [] success message
         [] generate another number/name
@@ -16,8 +17,8 @@ console.log('js');
 $(document).ready(onReady);
 function onReady() {
     console.log('Here are all the available people:', people);
-    // call "pictures" function
     getPics();
+    $(document).on('click', '.person', clickPerson)
 } // end onReady
 
 function getPics() {
@@ -25,11 +26,13 @@ function getPics() {
     for (let i = 0; i < people.length; i++) {
         personNumber++
         $('#peopleDiv').append(`
-        <div data-person-number=${personNumber}>
-            <img src="https://github.com/${people[i].githubUsername}.png?size=250" 
-            alt="Profile image of ${people[i].name}">
-        </div>
+            <div class="person" data-person-number=${personNumber}>
+                <img src="https://github.com/${people[i].githubUsername}.png?size=250" 
+                alt="Profile image of ${people[i].name}">
+            </div>
         ` );
-    }
+    } // end if
+} // end getPics
 
-}
+function clickPerson() {
+} // end clickPerson
