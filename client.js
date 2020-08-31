@@ -1,4 +1,3 @@
-console.log('Here are all the available people:', people);
 
 /*TODO:
     [] in onReady, make function to append divs for each person with their github image
@@ -13,3 +12,24 @@ console.log('Here are all the available people:', people);
         [] error message
         [] try again
 */
+console.log('js');
+$(document).ready(onReady);
+function onReady() {
+    console.log('Here are all the available people:', people);
+    // call "pictures" function
+    getPics();
+} // end onReady
+
+function getPics() {
+    let personNumber = 0;
+    for (let i = 0; i < people.length; i++) {
+        personNumber++
+        $('#peopleDiv').append(`
+        <div data-person-number=${personNumber}>
+            <img src="https://github.com/${people[i].githubUsername}.png?size=250" 
+            alt="Profile image of ${people[i].name}">
+        </div>
+        ` );
+    }
+
+}
