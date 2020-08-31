@@ -1,14 +1,13 @@
 
 /*TODO:
     [x] in onReady, make function to append divs for each person with their github image
-    [] create alert to tell player the name of the person they are looking for
         [x] assign each person's div a number
         [x] make each person's picture/div a button
         [x] .alert();
         [x] generate number between
-    [] if they pick right
-        [] success message
-        [] generate another number/name
+    [x] if they pick right
+        [x] success message
+        [x] generate another number/name
     [x] if they're wrong
         [x] error message
         [x] try again
