@@ -4,8 +4,8 @@
     [] create alert to tell player the name of the person they are looking for
         [x] assign each person's div a number
         [x] make each person's picture/div a button
-        [] .alert();
-        [] generate number between
+        [x] .alert();
+        [x] generate number between
     [] if they pick right
         [] success message
         [] generate another number/name
@@ -15,17 +15,15 @@
 */
 
 //global variables
-let playerNumber = 1;
-//randomNumber(1, people.length);
+let playerNumber = randomNumber(1, people.length);
 
 console.log('js');
 $(document).ready(onReady);
 function onReady() {
-    randomNumber();
     console.log('Here are all the available people:', people);
     getPics();
     $(document).on('click', '.person', clickPerson);
-
+    alert(playerNumber);
 } // end onReady
 
 function getPics() {
@@ -52,5 +50,5 @@ function clickPerson() {
     } // end if
     if (playerNumber != $(this).data('person-number')) {
         alert('Oops, try again!');
-    } // end else
+    } // end if
 } // end clickPerson
